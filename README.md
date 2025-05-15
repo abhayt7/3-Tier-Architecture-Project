@@ -57,19 +57,10 @@ This project demonstrates the provisioning of a **3-tier architecture** on **AWS
 git clone https://github.com/<your-username>/aws-3tier-terraform.git
 cd aws-3tier-terraform
 Initialize Terraform
-bash
-Copy
-Edit
 terraform init
 3. Review the Execution Plan
-bash
-Copy
-Edit
 terraform plan
 4. Apply the Infrastructure
-bash
-Copy
-Edit
 terraform apply
 🌐 DNS Setup (Route 53)
 The project includes Route 53 records for:
@@ -89,8 +80,6 @@ Private Subnets: Database is placed in private subnets to restrict direct public
 
 🔍 Outputs
 terraform
-Copy
-Edit
 output "app_lb_dns_name" {
   value = aws_lb.app_lb.dns_name
 }
