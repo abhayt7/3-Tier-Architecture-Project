@@ -56,3 +56,42 @@ This project demonstrates the provisioning of a **3-tier architecture** on **AWS
 ```bash
 git clone https://github.com/<your-username>/aws-3tier-terraform.git
 cd aws-3tier-terraform
+Initialize Terraform
+bash
+Copy
+Edit
+terraform init
+3. Review the Execution Plan
+bash
+Copy
+Edit
+terraform plan
+4. Apply the Infrastructure
+bash
+Copy
+Edit
+terraform apply
+🌐 DNS Setup (Route 53)
+The project includes Route 53 records for:
+
+web.example-1.com
+
+app.example-1.com
+
+⚠️ Note: Ensure you own and configure example-1.com in Route 53 or update with your domain name.
+
+🛡️ Security
+Web/App Security Group: Allows HTTP (80) and HTTPS (443) traffic from the internet.
+
+DB Security Group: Only allows MySQL (3306) traffic from specific web/application subnets.
+
+Private Subnets: Database is placed in private subnets to restrict direct public access.
+
+🔍 Outputs
+terraform
+Copy
+Edit
+output "app_lb_dns_name" {
+  value = aws_lb.app_lb.dns_name
+}
+Use this output to access the Application Load Balancer (ALB) endpoint after successful deployment.
